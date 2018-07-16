@@ -1,0 +1,30 @@
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
+
+class Employee {
+   private:
+      int employeeNumber;
+      string name;
+      string address;
+      string phone;
+      double hourlyWage;
+      double hoursWorked;
+   public:
+      Employee();
+      int getEmployeeNumber() const;
+      string getName() const;
+      string getStreetAddress() const;
+      string getPhoneNumber() const;
+      double getHourlyWage() const;
+      double getHoursWorked() const;
+      void setName(string empName);
+      void setStreetAddress(string empAddr);
+      void setPhoneNumber(string empPhone);
+      void setHourlyWage(double empWage);
+      void setHoursWorked(double empHours);
+      
+      double calcPay() const;
+      void printCheck();
+};
+
+#endif
