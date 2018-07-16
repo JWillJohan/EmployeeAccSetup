@@ -1,0 +1,139 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "employee.h"
+
+Employee::Employee() : employeeNumber(37), name("name"), address("address"), phone("123"), hourlyWage(0), hoursWorked(0) {
+}
+
+int Employee::getEmployeeNumber() const{
+   return employeeNumber;
+}
+
+string Employee::getName() const{
+   return name;
+}
+
+string Employee::getStreetAddress() const{
+   return address;
+}
+
+string Employee::getPhoneNumber() const{
+   return phone;
+}
+
+double Employee::getHourlyWage() const{
+   return hourlyWage;
+}
+
+double Employee::getHoursWorked() const{
+   return hoursWorked;
+}
+
+void Employee::setName(string empName){
+   name = empName;
+   
+   return;
+}
+
+void Employee::setStreetAddress(string empAddr){
+   address = empAddr;
+   
+   return;
+}
+
+void Employee::setPhoneNumber(string empPhone){
+   phone = empPhone;
+   
+   return;
+}
+
+void Employee::setHourlyWage(double empWage){
+   hourlyWage = empWage;
+   
+   return;
+}
+
+void Employee::setHoursWorked(double empHours){
+   hoursWorked = empHours;
+   
+   return;
+}
+      
+double Employee::calcPay() const{
+   double grossPay;
+   double netPay;
+   double tax;
+   
+   cout.setf(ios::fixed);
+   cout.setf(ios::showpoint);
+   cout.precision(2);
+   
+   if(hoursWorked > 40) {
+      grossPay = (hourlyWage * 40.0) + ((hourlyWage * 1.5) * (hoursWorked - 40.0));
+   }
+   else {
+      grossPay = hoursWorked * hourlyWage;
+   }
+   
+   tax = grossPay * 0.275;
+   netPay = grossPay - tax;
+   
+   return netPay;
+}
+
+void Employee::printCheck(){
+   
+   getline(cin, name);
+   setName(name);
+   cout << "Employee Name: " << getName() << endl;
+   cout << "Employee Number: " << getEmployeeNumber() << endl;
+   getline(cin, address);
+   setStreetAddress(address);
+   cout << "Address: " << getStreetAddress() << endl;
+   getline(cin, phone);
+   setPhoneNumber(phone);
+   cout << "Phone: " << getPhoneNumber() << endl << endl << endl;
+   
+   cin >> hourlyWage;
+   cin >> hoursWorked;
+   setHourlyWage(hourlyWage);
+   setHoursWorked(hoursWorked);
+   
+   cout << "....................UVU Computer Science Dept................................." << endl << endl << endl;
+   cout << "Pay to the order of " << getName() << "....................................$" << calcPay();
+   cout << endl << endl << endl;
+   cout << "United Community Credit Union\n.............................................................................." << endl << endl;
+   cout << "Hours worked: " << getHoursWorked() << endl;
+   cout << "Hourly wage: " << getHourlyWage() << endl;
+   
+   return;
+}
+}
+
+void Employee::setPhoneNumber(string empPhone){
+   phone = empPhone;
+   
+   return;
+}
+
+void Employee::setHourlyWage(double empWage){
+   hourlyWage = empWage;
+   
+   return;
+}
+
+void Employee::setHoursWorked(double empHours){
+   hoursWorked = empHours;
+   
+   return;
+}
+      
+double Employee::calcPay() const{
+   return 0;
+}
+
+void Employee::printCheck() const{
+   return;
+}
