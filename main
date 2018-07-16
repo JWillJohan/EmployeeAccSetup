@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+#include "employee.h"
+
+int main() {
+   Employee employee1;
+   Employee employee2;
+   string empty;
+   
+   employee1.printCheck();
+   cout << endl << endl << endl << endl;
+   getline(cin, empty);
+   employee2.printCheck();
+   
+   return 0;
+}
